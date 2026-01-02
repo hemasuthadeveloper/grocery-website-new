@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f9f4f1;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT IMAGES */
+.left-images {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-images img {
+    width: 100%;
+    height: 33.33%;
+    object-fit: cover;
+}
+
+/* RIGHT FORM */
+.right-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-card {
+    width: 420px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* TITLE */
+.form-card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* INPUT */
+.input-box {
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #4caf50;
+    font-size: 16px;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* SUCCESS SCREEN */
+.success {
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 80px 30px;
+}
+
+.success h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.success p {
+    font-size: 18px;
+}
+
+/* HIDE */
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left-images">
+        <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+        <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-box">
+
+        <!-- FORM CARD -->
+        <div class="form-card" id="formBox">
+
+            <div class="close-btn">✕</div>
+
+            <h2>Sign Up</h2>
+
+            <div class="input-box">
+                <input type="text" id="name" placeholder="Amjath Althaf">
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="email" placeholder="amjaann@gmail.com">
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="password" placeholder="••••••••">
+            </div>
+
+            <button class="btn" onclick="signUp()">Sign Up</button>
+
+            <p class="footer-text">
+                Already have an account? <a href="#">Log in</a>
+            </p>
+        </div>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="form-card success hidden" id="successBox">
+            <h2>✅ Login Successful</h2>
+            <p>Welcome! Your account has been created successfully.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function signUp() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (name && email && password) {
+        document.getElementById("formBox").classList.add("hidden");
+        document.getElementById("successBox").classList.remove("hidden");
+    } else {
+        alert("Please fill all fields");
+    }
+}
+</script>
+
+</body>
+</html>

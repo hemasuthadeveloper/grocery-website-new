@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Market - Our Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d5c2f;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 40px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: #5cb85c;
+            color: white;
+            font-size: 14px;
+        }
+
+        .search-bar input::placeholder {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .user-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #2d5c2f;
+            border-radius: 50%;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 3px solid #5cb85c;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-container a {
+            padding: 15px 0;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-container a.active {
+            color: #5cb85c;
+        }
+
+        .nav-container a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #5cb85c;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .page-subtitle span {
+            color: #5cb85c;
+        }
+
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Blog Posts Section */
+        .blog-posts {
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .blog-date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 350px;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-item {
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .category-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .recent-post img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .recent-post-content {
+            flex: 1;
+        }
+
+        .recent-post-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .recent-post-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .promo-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .promo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .promo-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="18" fill="#5cb85c"/>
+                    <path d="M15 20 L18 25 L25 15" stroke="white" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="logo-text">The Market</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search product category">
+            </div>
+            <div class="header-icons">
+                <div class="user-icon"></div>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#shopping">Shopping</a>
+            <a href="#categories">Categories</a>
+            <a href="#blogs" class="active">Blogs</a>
+            <a href="#contact">Contact us</a>
+            <a href="#about">About us</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <h1 class="page-title">Our Blog</h1>
+        <p class="page-subtitle">Our Latest <span>News & Blogs</span></p>
+
+        <div class="content-wrapper">
+            <!-- Blog Posts -->
+            <div class="blog-posts">
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=650&h=300&fit=crop" alt="Woman shopping for groceries">
+                    <div class="blog-content">
+                        <h2 class="blog-title">Order Picking: Meaning, Methods & Best Choice for Your Grocery</h2>
+                        <p class="blog-date">June 20, 2025</p>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=650&h=300&fit=crop" alt="Sale sign in retail store">
+                    <div class="blog-content">
+                        <h2 class="blog-title">What is Assortment Planning in Retail & How to Optimize It?</h2>
+                        <p class="blog-date">May 12, 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Search</h3>
+                    <input type="text" class="search-box" placeholder="Search">
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Popular Category</h3>
+                    <ul class="category-list">
+                        <li class="category-item">Shopping Tips</li>
+                        <li class="category-item">Grocery</li>
+                        <li class="category-item">Fruits&Vegetables</li>
+                        <li class="category-item">Bakery Products</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Recent Post</h3>
+                    <div class="recent-post">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=80&h=80&fit=crop" alt="Grocery shopping">
+                        <div class="recent-post-content">
+                            <div class="recent-post-title">Why is Omnichannel Grocery Shopping the Way Your Customers Shop</div>
+                            <div class="recent-post-date">16 July, 2024</div>
+                        </div>
+                    </div>
+
+                    <div class="recent-post">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=80&h=80&fit=crop" alt="Inventory management">
+                        <div class="recent-post-content">
+                            <div class="recent-post-title">What is Product Cost Management (Even) & How Does It Work?</div>
+                            <div class="recent-post-date">12 August, 2023</div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section promo-card">
+                        <img src="https://images.unsplash.com/photo-1601598851547-4302969d0614?w=350&h=200&fit=crop" alt="Shopping promotion">
+                        <div class="promo-badge">Sale upto 20%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Enquiry</title>
+</head>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+    }
+
+    /* ================= HEADER ================= */
+   .figma-header{
+  padding:18px 50px;
+  background:#fff;
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.figma-logo img{
+  height:92px;
+  
+}
+
+.figma-search{
+  width:700px;
+  background:#4CAF50;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  padding:10px 18px;
+}
+
+.figma-search input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  font-size:20px;
+}
+
+.figma-search input::placeholder{
+  color:#eaffea;
+}
+
+.search-icon{
+  width:40px;
+  height:40px;
+  padding:6px;
+  /* border-radius:50%; */
+}
+
+.figma-icons img{
+  width:22px;
+  margin-left:18px;
+  cursor:pointer;
+}
+
+.figma-menu{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:12px;
+}
+
+.figma-menu a{
+  text-decoration:none;
+  color:#000;
+  font-size:20px;
+}
+/* RIGHT */
+.icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icons img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.icons i{
+    font-size:25px;
+    cursor:pointer;
+}
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            min-height: calc(100vh - 200px);
+            margin-top: 60px;
+        }
+
+        /* Form Section */
+        .form-section {
+            flex: 1;
+            background: #5CB85C;
+            padding: 60px 80px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 90px;
+        }
+
+        .form-group label {
+            display: block;
+            color: black;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 109%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        /* Image Section */
+        .image-section {
+            flex: 1;
+            background: url('enquiry image.jpg') center/cover no-repeat;
+            background-color: #f5f5f5;
+        }
+
+       /* FOOTER */
+    .footer {
+  background: #f7a400;
+  position: relative;
+  padding: 60px 60px 40px 200px;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+/* OVAL CONTAINER */
+.footer-girl-wrapper {
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 90px;
+  height: 140px;
+  border-radius: 100px 100px 0 0; /* OVAL SHAPE */
+  overflow: hidden;
+  background: #f7a400;
+}
+
+/* IMAGE */
+.footer-girl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+    background: #f7a400;
+    padding: 60px 50px 35px;
+    color: #000;
+    position: relative;
+    overflow: visible;   /* IMPORTANT */
+}
+
+
+/* MAIN GRID */
+.footer-main{
+    display:grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 1.4fr;
+    gap:30px;
+    align-items:start;
+    margin-top: -41px;
+}
+
+/* GIRL IMAGE */
+.girl-img{
+    position:absolute;
+    bottom:0;
+    left:20px;
+    height:100px;
+    border-radius: 150%;
+}
+
+/* LEFT CONTENT */
+.footer-left{
+    padding-left:101px; /* space for girl image */
+}
+
+.footer-left img.logo{
+    width:90px;
+    margin-top: -14px;
+}
+
+.follow{
+    font-size:19px;
+    margin:8px 0 6px;
+    font-weight:600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;     /* soft square like Figma */
+  background: #fff;
+  padding: 6px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* HEADINGS */
+.footer h4{
+    font-size:22px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+/* LISTS */
+.footer ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer ul li{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+/* CONTACT */
+.contact li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    text-align:center;
+    font-size:15px;
+    margin-top:10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+    margin-left: 230px;
+
+}
+    </style>
+</head>
+<body>
+ <!-- HEADER -->
+<header class="figma-header">
+  <div class="header-row">
+
+    <!-- Logo -->
+    <div class="figma-logo">
+      <img src="logo image.png" alt="The Market">
+    </div>
+
+    <!-- Search -->
+    <div class="figma-search">
+      <input type="text" placeholder="Search product category">
+      <img src="logo search icon.png" class="search-icon">
+    </div>
+
+ <!-- RIGHT ICONS -->
+        <div class="icons">
+            <img src="logo  boy image.jpg">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+  </div>
+
+  <!-- Menu -->
+  <nav class="figma-menu">
+    <a href="main.html">Home</a>
+    <a href="shopping.html">Shopping</a>
+    <a href="categories.html">Categories</a>
+    <a href="blog.html">Blogs</a>
+    <a href="contact.html">Contact us</a>
+    <a href="about us.html">About us</a>
+  </nav>
+</header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Form Section -->
+        <div class="form-section">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input type="text" placeholder="Exaples">
+                </div>
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input type="text" placeholder="Ex-Doe">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>E-mail*</label>
+                    <input type="email" placeholder="exmp@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone*</label>
+                    <input type="tel" placeholder="enter phone nmbr">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Subject*</label>
+                <input type="text" placeholder="Enter here">
+            </div>
+
+            <div class="form-group">
+                <label>Your Message*</label>
+                <textarea placeholder="Enter here"></textarea>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section"></div>
+    </div>
+
+   <footer class="footer">
+
+    <!-- Girl Image at Bottom -->
+   <div class="footer-girl-wrapper">
+  <img src="footer girl image.jpg" class="footer-girl-img">
+</div>
+
+    <div class="footer-main">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <img src="logo image.png" class="logo">
+
+            <div class="follow">Follow Us On :</div>
+           <div class="social-icons">
+  <a href="#"><img src="facebook.png" alt="Facebook"></a>
+  <a href="#"><img src="instagram.png" alt="Instagram"></a>
+  <a href="#"><img src="whatsup.png" alt="WhatsApp"></a>
+</div>
+
+        </div>
+
+        <!-- COMPANY -->
+        <div>
+            <h4>Company</h4>
+            <ul>
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Contact us</li>
+                <li>Career</li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER SERVICE -->
+        <div>
+            <h4>Customer service</h4>
+            <ul>
+                <li>My Account</li>
+                <li>Track your order</li>
+                <li>Return</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+
+        <!-- OUR INFORMATION -->
+        <div>
+            <h4>Our information</h4>
+            <ul>
+                <li>Privacy</li>
+                <li>User terms & Conditions</li>
+                <li>Return Policy</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div>
+            <h4>Contact info</h4>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i> 123-456-789</li>
+                <li><i class="fa-solid fa-envelope"></i> example@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot"></i> 72, main street<br>Mumbai-001</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 My Market. All Rights Reserved<br>
+        Terms & Conditions | Privacy Policy
+    </div>
+
+</footer>
+
+</body>
+</html>

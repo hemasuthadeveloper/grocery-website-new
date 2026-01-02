@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Grocery Website</title>
+</head>
+  <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+    }
+
+    /* ================= HEADER ================= */
+   .figma-header{
+  padding:18px 50px;
+  background:#fff;
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.figma-logo img{
+  height:92px;
+  
+}
+
+.figma-search{
+  width:700px;
+  background:#4CAF50;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  padding:10px 18px;
+}
+
+.figma-search input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  font-size:20px;
+}
+
+.figma-search input::placeholder{
+  color:#eaffea;
+}
+
+.search-icon{
+  width:40px;
+  height:40px;
+  padding:6px;
+  /* border-radius:50%; */
+}
+
+.figma-icons img{
+  width:22px;
+  margin-left:18px;
+  cursor:pointer;
+}
+
+.figma-menu{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:12px;
+}
+
+.figma-menu a{
+  text-decoration:none;
+  color:#000;
+  font-size:20px;
+}
+/* RIGHT */
+.icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icons img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.icons i{
+    font-size:25px;
+    cursor:pointer;
+}
+
+    /* ================= HERO ================= */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("Hero image.jpg") center/cover no-repeat;
+      height: 370px;
+      color: white;
+      padding: 60px 80px;
+
+    }
+
+    .hero h1 {
+      font-size: 48px;
+    }
+
+    .hero h2 {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 48px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin-top: 12px;
+       font-size: 20px;
+       color: white;
+    }
+
+  .hero-btns {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Green Button */
+.btn-primary {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Arrow inside button */
+.btn-primary .arrow {
+  font-size: 22px;
+}
+
+/* Enquiry Furniture */
+.btn-link {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f4b400;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* underline effect */
+.btn-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #f4b400;
+  border-radius: 2px;
+}
+
+
+    .rating-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 45px;
+}
+
+.avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatars img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-left: -15px;
+  object-fit: cover;
+}
+
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.plus-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #f4b400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+  margin-left: -15px;
+  border: 3px solid white;
+}
+
+.rating-text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+
+.rating-text p {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: #555;
+}
+/* fruits */
+.deals-section {
+  width: 100%;
+  padding: 40px 80px;
+  text-align: center;
+}
+
+.deals-title {
+  color: #f4a100;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.deals-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.deal-card {
+  width: 720px;
+  text-align: center;
+}
+
+.deal-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.deal-card p {
+  margin: 18px 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.deal-card button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 36px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+
+
+    
+     /* Why Choose Us Section */
+        .section-title {
+            text-align: center;
+            color: #FDB714;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 130px 0 30px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            text-align: center;
+            background: #F5F5F5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex: 1;
+            width: 250px;
+            height: 309px;
+        }
+
+        .feature-icon {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            margin-top: 40px;
+        }
+
+        .feature-icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid black;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            color: #000000;
+            font-weight: 500;
+        }
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            text-align: center;
+            flex: 1;
+        }
+
+        .category-icon {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .category-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-title {
+            font-size: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+        /* question and answer */
+        .faq-container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.faq-item{
+    background:#fff;
+    border-radius:8px;
+    margin-bottom:15px;
+    padding:18px 20px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.faq-question{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:600;
+    font-size: 20px;
+}
+
+.faq-answer{
+    display:none;
+    margin-top:12px;
+    color:#555;
+    font-size:20px;
+    line-height:1.6;
+}
+
+.arrow{
+    font-size:18px;
+    transition:transform 0.3s;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+.faq-item.active .arrow{
+    transform:rotate(180deg);
+}
+/* card */
+ .container {
+        display: flex;
+        gap: 120px;
+        max-width: 1200px;
+        margin: 50px;
+        padding: 50px 0;
+    }
+
+    .card {
+        background: white;
+        border-radius: 15px;
+        width: 420px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        position: relative;
+    }
+
+    .image-container {
+        position: relative;
+        height: 200px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .discount-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #CCFF00;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1.1;
+    }
+
+    .favorite-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #00FF85;
+        font-size: 24px;
+        filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .category {
+        color: #2D8A39;
+        font-size: 28px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    .star {
+        color: #F8E71C;
+        margin-right: 8px;
+    }
+
+    .product-name {
+        font-size: 22px;
+        color: #000;
+        margin: 5px 0;
+    }
+
+    .weight {
+        color: #888;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .price {
+        font-size: 32px;
+        font-weight: 600;
+    }
+
+    .add-btn {
+        border: 1px solid #333;
+        border-radius: 50px;
+        padding: 5px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        cursor: pointer;
+        font-size: 24px;
+        font-family: inherit;
+    }
+
+    .cart-icon {
+        color: #FF4D4D;
+        font-size: 28px;
+    }
+  /* FOOTER */
+    .footer {
+  background: #f7a400;
+  position: relative;
+  padding: 60px 60px 40px 200px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+/* OVAL CONTAINER */
+.footer-girl-wrapper {
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 90px;
+  height: 140px;
+  border-radius: 100px 100px 0 0; /* OVAL SHAPE */
+  overflow: hidden;
+  background: #f7a400;
+}
+
+/* IMAGE */
+.footer-girl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+    background: #f7a400;
+    padding: 60px 50px 35px;
+    color: #000;
+    position: relative;
+    overflow: visible;   /* IMPORTANT */
+}
+
+
+/* MAIN GRID */
+.footer-main{
+    display:grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 1.4fr;
+    gap:30px;
+    align-items:start;
+    margin-top: -41px;
+}
+
+/* GIRL IMAGE */
+.girl-img{
+    position:absolute;
+    bottom:0;
+    left:20px;
+    height:100px;
+    border-radius: 150%;
+}
+
+/* LEFT CONTENT */
+.footer-left{
+    padding-left:101px; /* space for girl image */
+}
+
+.footer-left img.logo{
+    width:90px;
+    margin-top: -14px;
+}
+
+.follow{
+    font-size:19px;
+    margin:8px 0 6px;
+    font-weight:600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;     /* soft square like Figma */
+  background: #fff;
+  padding: 6px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* HEADINGS */
+.footer h4{
+    font-size:22px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+/* LISTS */
+.footer ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer ul li{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+/* CONTACT */
+.contact li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    text-align:center;
+    font-size:15px;
+    margin-top:10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+    margin-left: 230px;
+
+}
+/* new */
+.account-dropdown {
+  position: absolute;
+  top: 115px;
+  right: 27;
+  width: 235px;
+  background: #4caf50;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.account-dropdown a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.account-dropdown a:hover {
+  background: rgba(255,255,255,0.2);
+}
+/* bell */
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 120px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 700px;
+  background: #4caf50;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Close icon */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Title */
+.popup h3 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* List style */
+.popup ul {
+  padding-left: 20px;
+}
+
+.popup li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+/* ===========================
+   TABLET (max-width: 1024px)
+=========================== */
+@media (max-width: 1024px) {
+
+  .figma-header {
+    padding: 15px 30px;
+  }
+
+  .figma-search {
+    width: 450px;
+  }
+
+  .hero {
+    padding: 40px;
+    height: auto;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .features,
+  .categories,
+  .deals-container,
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature-card,
+  .category-card,
+  .card {
+    width: 45%;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .footer-left {
+    padding-left: 0;
+  }
+
+  .popup {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* ===========================
+   MOBILE (max-width: 768px)
+=========================== */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .figma-search {
+    width: 100%;
+  }
+
+  .figma-menu {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  /* FEATURES / CATEGORIES */
+  .features,
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card,
+  .category-card {
+    width: 90%;
+  }
+
+  /* DEALS */
+  .deal-card {
+    width: 100%;
+  }
+
+  /* PRODUCT CARDS */
+  .container {
+    flex-direction: column;
+    gap: 40px;
+    margin: 30px auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* FAQ */
+  .faq-container {
+    padding: 0 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 20px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-left {
+    padding-left: 0;
+  }
+
+  .footer-bottom {
+    margin-left: 0;
+  }
+
+  .footer-girl-wrapper {
+    display: none;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE (max-width: 480px)
+=========================== */
+@media (max-width: 480px) {
+
+  .figma-logo img {
+    height: 60px;
+  }
+
+  .figma-search input {
+    font-size: 14px;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .btn-primary {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+
+  .rating-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .popup {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .account-dropdown {
+    right: 10px;
+    width: 200px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="figma-header">
+  <div class="header-row">
+
+    <!-- Logo -->
+    <div class="figma-logo">
+      <img src="logo image.png" alt="The Market">
+    </div>
+   
+
+    <!-- Search -->
+    <div class="figma-search">
+      <input type="text" placeholder="Search product category">
+      <img src="logo search icon.png" class="search-icon">
+    </div>
+
+ <!-- RIGHT ICONS -->
+        <div class="icons">
+          <img src="logo  boy image.jpg" id="userIcon">
+
+             <!-- DROPDOWN -->
+    <div class="account-dropdown" id="accountMenu">
+      <a href="#">My Accounts</a><hr>
+      <a href="personal.html">Personal Information</a>
+      <a href="invoice.html">My Order</a>
+      <a href="Tracking.html">Tracking Order</a>
+      <a href="password manager.html">Password Manager</a>
+      <a href="logout.html">Logout</a>
+    </div>
+           <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="add to cart.html">
+  <i class="fa-solid fa-cart-shopping"></i>
+</a>
+           <i class="fa-regular fa-bell bell" onclick="openPopup()"></i>
+        </div>
+
+  </div>
+
+  <!-- Menu -->
+  <nav class="figma-menu">
+    <a href="main.html">Home</a>
+    <a href="shopping.html">Shopping</a>
+    <a href="categories.html">Categories</a>
+    <a href="blog.html">Blogs</a>
+    <a href="contact.html">Contact us</a>
+    <a href="about us.html">About us</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Explore Fresh & Healthy</h1>
+  <h2>Convenience and Trust your way</h2>
+  <p>Your trusted online grocery store for quick, easy and Reliable Shopping Freshness delivered within hours.</p>
+<div class="hero-btns">
+  <button class="btn-primary">
+    Shop now <span class="arrow">→</span>
+  </button>
+
+  <a href="enquiry.html" class="btn-link">Enquiry Furniture</a>
+</div>
+ <div class="rating-section">
+  <div class="avatars">
+    <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+    <img src="https://randomuser.me/api/portraits/women/68.jpg" />
+    <img src="https://randomuser.me/api/portraits/women/12.jpg" />
+
+    <div class="plus-circle">+</div>
+  </div>
+
+  <div class="rating-text">
+    <h3>4.9k Ratings+</h3>
+    <p>Trusted by 50k customers</p>
+  </div>
+</div>
+
+</section>
+ <!-- Why Choose Us -->
+        <h2 class="section-title">Why Choose Us!</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="choose 1.png">
+                </div>
+                <div class="feature-title">Fresh & Handpicked</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="choose 2.jpg">
+                </div>
+                <div class="feature-title">Fast & Reliable Delivery</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="choose 3.png">
+                </div>
+                <div class="feature-title">Affordable Prices</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="choose 4.png">
+                </div>
+                <div class="feature-title">Wide Variety</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                   <img src="choose 5.png">
+                </div>
+                <div class="feature-title">Quality & Trust</div>
+            </div>
+        </div>
+<!-- CATEGORIES -->
+<h2 class="section-title">Categories</h2>
+<div class="categories">
+  <div class="category-card">
+    <div class="category-icon"><img src="fruit 1.jpg"></div>
+    <div class="category-title">Vegetables</div>
+  </div>
+  <div class="category-card">
+    <div class="category-icon"><img src="fruit 2.jpg"></div>
+    <div class="category-title">Fresh Fruits</div>
+  </div>
+  <div class="category-card">
+    <div class="category-icon"><img src="fruit 3.jpg"></div>
+    <div class="category-title">Milk & Egg</div>
+  </div>
+  <div class="category-card">
+    <div class="category-icon"><img src="fruit 4.jpg"></div>
+    <div class="category-title">Dry Fruits</div>
+  </div>
+  <div class="category-card">
+    <div class="category-icon"><img src="fruit 5.jpg"></div>
+    <div class="category-title">House Hold</div>
+  </div>
+</div>
+
+<section class="deals-section">
+  <h2 class="deals-title">Deals flat 25% off</h2>
+
+  <div class="deals-container">
+
+    <!-- Card 1 -->
+    <div class="deal-card">
+      <img src="veg 1.jpg" alt="Vegetables">
+      <p>Fresh vegetables have 25% OFF</p>
+     <a href="categories.html">
+  <button>Shop now</button>
+</a>
+
+    </div>
+
+    <!-- Card 2 -->
+    <div class="deal-card">
+      <img src="veg 2.jpg" alt="Fruits">
+      <p>Fresh fruits have 25% OFF</p>
+      <a href="categories.html">
+  <button>Shop now</button>
+</a>
+
+    </div>
+
+  </div>
+</section>
+<!-- 3 card -->
+ <div class="container">
+
+    <div class="card">
+        <div class="image-container">
+            <div class="discount-badge">20%<br>off</div>
+            <div class="favorite-icon">❤</div>
+            <img src="feature 1.jpg" class="product-img">
+        </div>
+        <div class="content">
+            <div class="header-row">
+                <h3 class="category">Fruits</h3>
+                <div class="rating"><span class="star">★</span> 4.5</div>
+            </div>
+            <p class="product-name">Fresh Strawberry</p>
+            <p class="weight">500g</p>
+            <div class="footer-row">
+                <div class="price">$56</div>
+                <button class="add-btn">Add <img src="Icon (1).png"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image-container">
+            <div class="discount-badge">20%<br>off</div>
+            <div class="favorite-icon">❤</div>
+            <img src="feature 2.jpg" class="product-img">
+        </div>
+        <div class="content">
+            <div class="header-row">
+                <h3 class="category">Fruits</h3>
+                <div class="rating"><span class="star">★</span> 4.5</div>
+            </div>
+            <p class="product-name">Fresh Strawberry</p>
+            <p class="weight">500g</p>
+            <div class="footer-row">
+                <div class="price">$56</div>
+                <button class="add-btn">Add <img src="Icon (1).png"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="image-container">
+            <div class="discount-badge">20%<br>off</div>
+            <div class="favorite-icon">❤</div>
+            <img src="feature 3.jpg" class="product-img">
+        </div>
+        <div class="content">
+            <div class="header-row">
+                <h3 class="category">Fruits</h3>
+                <div class="rating"><span class="star">★</span> 4.5</div>
+            </div>
+            <p class="product-name">Fresh Strawberry</p>
+            <p class="weight">500g</p>
+            <div class="footer-row">
+                <div class="price">$56</div>
+                <button class="add-btn">Add <img src="Icon (1).png"></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- question and answer -->
+ <div class="faq-container">
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>1.) Do you offer free delivery?</span>
+            <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-answer">
+            Yes, we offer free standard delivery on all orders above ₹5,000. Express and scheduled delivery options are also available at checkout.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>2.) How long will it take to receive my order?</span>
+            <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-answer">
+            Delivery times vary based on your location and product availability. Most orders are delivered within 5–10 business days.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>3.) Can I return or exchange grocery after purchase?</span>
+            <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-answer">
+            Yes, you can return eligible items within 7 days of delivery. Items must be unused and in original condition.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>4.) How can I contact customer support?</span>
+            <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-answer">
+            You can reach us via live chat, email at support@furnishapp.com, or call 1800-123-4567 (Mon–Sat, 10 AM–6 PM).
+        </div>
+    </div>
+
+</div>
+<footer class="footer">
+
+    <!-- Girl Image at Bottom -->
+   <div class="footer-girl-wrapper">
+  <img src="footer girl image.jpg" class="footer-girl-img">
+</div>
+
+    <div class="footer-main">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <img src="logo image.png" class="logo">
+
+            <div class="follow">Follow Us On :</div>
+           <div class="social-icons">
+  <a href="#"><img src="facebook.png" alt="Facebook"></a>
+  <a href="#"><img src="instagram.png" alt="Instagram"></a>
+  <a href="#"><img src="whatsup.png" alt="WhatsApp"></a>
+</div>
+
+        </div>
+
+        <!-- COMPANY -->
+        <div>
+            <h4>Company</h4>
+            <ul>
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Contact us</li>
+                <li>Career</li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER SERVICE -->
+        <div>
+            <h4>Customer service</h4>
+            <ul>
+                <li>My Account</li>
+                <li>Track your order</li>
+                <li>Return</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+
+        <!-- OUR INFORMATION -->
+        <div>
+            <h4>Our information</h4>
+            <ul>
+                <li>Privacy</li>
+                <li>User terms & Conditions</li>
+                <li>Return Policy</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div>
+            <h4>Contact info</h4>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i> 123-456-789</li>
+                <li><i class="fa-solid fa-envelope"></i> example@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot"></i> 72, main street<br>Mumbai-001</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 My Market. All Rights Reserved<br>
+        Terms & Conditions | Privacy Policy
+    </div>
+
+</footer>
+<!-- Popup Box -->
+<div class="popup" id="popup">
+  <span class="close" onclick="closePopup()">✕</span>
+
+  <h3>Order Updates</h3>
+  <ul>
+    <li>“Your order has been placed successfully! We’ll notify you once it’s out for delivery.”</li>
+    <li>“Good news! Your groceries are on the way. Track your delivery in real time.”</li>
+    <li>“Your order has been delivered. Thank you for shopping with us!”</li>
+  </ul>
+</div>
+
+
+<script>
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+// new 1
+const userIcon = document.getElementById("userIcon");
+const accountMenu = document.getElementById("accountMenu");
+
+userIcon.addEventListener("click", () => {
+  accountMenu.style.display =
+    accountMenu.style.display === "flex" ? "none" : "flex";
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".icons")) {
+    accountMenu.style.display = "none";
+  }
+});
+// bell
+function openPopup() {
+  document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>

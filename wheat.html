@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Page UI</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+
+/* ================= RESET ================= */
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+    }
+    .one{
+      margin-top: 78px;
+      margin-left: 30px;
+    }
+
+    /* ================= HEADER ================= */
+   .figma-header{
+  padding:18px 50px;
+  background:#fff;
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.figma-logo img{
+  height:92px;
+  
+}
+
+.figma-search{
+  width:700px;
+  background:#4CAF50;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  padding:10px 18px;
+}
+
+.figma-search input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  font-size:20px;
+}
+
+.figma-search input::placeholder{
+  color:#eaffea;
+}
+
+.search-icon{
+  width:40px;
+  height:40px;
+  padding:6px;
+  /* border-radius:50%; */
+}
+
+.figma-icons img{
+  width:22px;
+  margin-left:18px;
+  cursor:pointer;
+}
+
+.figma-menu{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:12px;
+}
+
+.figma-menu a{
+  text-decoration:none;
+  color:#000;
+  font-size:20px;
+}
+/* RIGHT */
+.icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icons img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.icons i{
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* ================= PRODUCT SECTION ================= */
+.product-layout {
+  display: flex;
+  gap: 40px;
+  max-width: 900px;
+  /* margin: 40px auto; */
+  margin-left: 15px;
+  margin-top: 65px;
+}
+
+/* LEFT CARD */
+.product-box {
+  width: 800px;
+  background-color: #e6f3d7;
+  border-radius: 4px;
+  /* overflow: hidden; */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.product-img-box {
+  height: 403px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 20px; */
+}
+
+.product-img-box img {
+  max-height: 100%;
+  mix-blend-mode: multiply;
+  width: 750px;
+  object-fit: cover;
+}
+
+.product-info-bar {
+  background-color: #58b35c;
+  color: #1a331a;
+  padding: 30px;
+  margin-top: -4px;
+}
+
+.info-top,
+.info-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: -35px;
+  
+}
+
+.offer {
+  font-size:20px;
+  font-weight: bold;
+ margin-top: -35px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+.item-price {
+  font-weight: bold;
+  font-size:20px;
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+.star-rating {
+  color: #f7d106;
+  font-size: 20px;
+}
+
+/* RIGHT SIDE DETAILS */
+.product-info {
+  flex: 1;
+  margin-left: 23px;
+  margin-top: 20px;
+}
+
+.product-info h3 {
+  margin: 0;
+  font-size:20px;
+  color: #333;
+     text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+.tagline {
+  font-size:20px;
+  margin: 10px 0 20px;
+  color: #444;
+  margin-top: 44px;
+}
+
+.description-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+/* BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color: #58b35c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #46964a;
+}
+
+.btn-secondary {
+  padding: 12px 30px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #f39c12;
+  cursor: pointer;
+}
+/* ================= GRID ================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+ 
+  margin-top: 50px;
+}
+
+/* ================= CARD ================= */
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+/* IMAGE */
+.image-container {
+  position: relative;
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DISCOUNT */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #c7ef00;
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* HEART ICON */
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.wishlist-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* DETAILS */
+.details {
+  padding: 15px;
+  background-color: #efefef; /* This adds the gray color to the marked box */
+  border-top: 1px solid #e0e0e0;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 14px;
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.rating {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+
+.star {
+  color: #f1c40f;
+  margin-right: 4px;
+}
+
+.product-title {
+  margin: 6px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+   
+}
+
+.weight {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #222;
+  background: #fff;
+  padding: 6px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn img {
+  width: 18px;
+}
+/* ================= FOOTER ================= */
+.footer-section {
+  background: #f7a400;
+  padding: 60px 60px 40px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.footer-girl-box {
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 90px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 100px 100px 0 0;
+}
+
+.footer-girl-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 1.4fr;
+  gap: 30px;
+  margin-top: -40px;
+}
+
+.footer-left-area {
+  padding-left: 100px;
+}
+
+.footer-left-area img {
+  width: 90px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socials img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px;
+}
+
+.footer-section h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.footer-bottom-text {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 15px;
+}
+/* new */
+.account-dropdown {
+  position: absolute;
+  top: 115px;
+  right: 27;
+  width: 235px;
+  background: #4caf50;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.account-dropdown a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.account-dropdown a:hover {
+  background: rgba(255,255,255,0.2);
+}
+/* bell */
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 120px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 700px;
+  background: #4caf50;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Close icon */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Title */
+.popup h3 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* List style */
+.popup ul {
+  padding-left: 20px;
+}
+
+.popup li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+/* ============================
+   LARGE TABLET (≤1200px)
+============================ */
+@media (max-width: 1200px) {
+
+  .figma-search {
+    width: 500px;
+  }
+
+  .product-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-box {
+    width: 100%;
+  }
+
+  .product-info {
+    margin-left: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-left-area {
+    padding-left: 0;
+  }
+}
+
+
+/* ============================
+   TABLET (≤992px)
+============================ */
+@media (max-width: 992px) {
+
+  .header-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .figma-search {
+    width: 100%;
+  }
+
+  .figma-menu {
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+  }
+
+  .product-layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .product-box {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-girl-box {
+    display: none;
+  }
+}
+
+
+/* ============================
+   MOBILE (≤768px)
+============================ */
+@media (max-width: 768px) {
+
+  .figma-logo img {
+    height: 65px;
+  }
+
+  .icons img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icons i {
+    font-size: 22px;
+  }
+
+  .product-layout {
+    margin: 20px 10px;
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-box {
+    width: 100%;
+  }
+
+  .image-container {
+    height: 220px;
+  }
+
+  .footer-section {
+    padding: 40px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-left-area {
+    padding-left: 0;
+  }
+
+  .popup {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ============================
+   SMALL MOBILE (≤480px)
+============================ */
+@media (max-width: 480px) {
+
+  .figma-search input {
+    font-size: 14px;
+  }
+
+  .figma-menu a {
+    font-size: 14px;
+  }
+
+  .product-title {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .add-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .popup {
+    padding: 20px;
+  }
+
+  .popup h3 {
+    font-size: 18px;
+  }
+
+  .popup li {
+    font-size: 14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="figma-header">
+  <div class="header-row">
+
+    <!-- Logo -->
+    <div class="figma-logo">
+      <img src="logo image.png" alt="The Market">
+    </div>
+
+    <!-- Search -->
+    <div class="figma-search">
+      <input type="text" placeholder="Search product category">
+      <img src="logo search icon.png" class="search-icon">
+    </div>
+
+ <!-- RIGHT ICONS -->
+        <div class="icons">
+          <img src="logo  boy image.jpg" id="userIcon">
+
+             <!-- DROPDOWN -->
+    <div class="account-dropdown" id="accountMenu">
+      <a href="#">My Accounts</a><hr>
+      <a href="personal.html">Personal Information</a>
+      <a href="invoice.html">My Order</a>
+      <a href="Tracking.html">Tracking Order</a>
+      <a href="password manager.html">Password Manager</a>
+      <a href="logout.html">Logout</a>
+    </div>
+           <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="add to cart.html">
+  <i class="fa-solid fa-cart-shopping"></i>
+</a>
+           <i class="fa-regular fa-bell bell" onclick="openPopup()"></i>
+        </div>
+
+  </div>
+
+
+  <!-- Menu -->
+  <nav class="figma-menu">
+    <a href="main.html">Home</a>
+    <a href="shopping.html">Shopping</a>
+    <a href="categories.html">Categories</a>
+    <a href="blog.html">Blogs</a>
+    <a href="contact.html">Contact us</a>
+    <a href="about us.html">About us</a>
+  </nav>
+</header>
+
+<!-- PRODUCT -->
+ 
+<div class="product-layout">
+
+  <div class="product-box">
+    <div class="product-img-box">
+      <img src="wheat image new.png" alt="">
+    </div>
+
+    <div class="product-info-bar">
+      <div class="info-top">
+        <span class="item-name">Ashirvaad Attaa</span>
+        <span class="offer">25%Off</span>
+      </div>
+
+      <div class="info-bottom">
+        <span class="item-price">$ 200</span>
+        <div class="star-rating">
+          ★★★★★
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3>Asirvaad Attaa</h3>
+    <p class="tagline">Freshness & Quality Focus</p>
+
+    <p class="description-text">
+      Made from the finest wheat grains, Aashirvaad Atta brings you soft,
+      fluffy rotis packed with natural goodness and taste.
+    </p>
+
+    <p class="description-text">
+      Trusted by millions of Indian households, Aashirvaad Atta delivers
+      the authentic taste of home with every meal.
+    </p>
+
+    <p class="description-text">
+      Rich in fiber and essential nutrients, Aashirvaad Atta helps your
+      family stay healthy and energized every day.
+    </p>
+
+    <div class="action-buttons">
+      <button class="btn-primary" onclick="window.location.href='billing details.html'">
+  Checkout
+</button>
+
+      <button class="btn-secondary" onclick="goToCart()">Addcart+</button>
+    </div>
+  </div>
+
+</div>
+<h1 class="one">Similar Products</h1>
+<div class="product-grid">
+
+  <!-- CARD 1 -->
+  <div class="product-card">
+    <div class="image-container">
+      <img src="mix 1.png">
+      <span class="discount-badge">20%<br>off</span>
+      <button class="wishlist-btn"><img src="heart icon.png"></button>
+    </div>
+    <div class="details">
+      <div class="header-row">
+        <span class="category">Grocery</span>
+        <div class="rating"><span class="star">★</span>4.5</div>
+      </div>
+      <div class="product-title">Almond</div>
+      <div class="weight">750g</div>
+      <div class="footer-row">
+        <div class="price">$134</div>
+        <button class="add-btn">Add <img src="Icon (1).png"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="product-card">
+    <div class="image-container">
+      <img src="mix 2.png">
+      <span class="discount-badge">20%<br>off</span>
+      <button class="wishlist-btn"><img src="heart icon.png"></button>
+    </div>
+    <div class="details">
+      <div class="header-row">
+        <span class="category">Grocery</span>
+        <div class="rating"><span class="star">★</span>4.5</div>
+      </div>
+      <div class="product-title">Sugar</div>
+      <div class="weight">1kg</div>
+      <div class="footer-row">
+        <div class="price">$50</div>
+        <button class="add-btn">Add <img src="Icon (1).png"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="product-card">
+    <div class="image-container">
+      <img src="mix 3.png">
+      <span class="discount-badge">20%<br>off</span>
+      <button class="wishlist-btn"><img src="heart icon.png"></button>
+    </div>
+    <div class="details">
+      <div class="header-row">
+        <span class="category">Grocery</span>
+        <div class="rating"><span class="star">★</span>4.5</div>
+      </div>
+      <div class="product-title">Ragi Flour</div>
+      <div class="weight">250g</div>
+      <div class="footer-row">
+        <div class="price">$320</div>
+        <button class="add-btn">Add <img src="Icon (1).png"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4 -->
+  <div class="product-card">
+    <div class="image-container">
+      <img src="mix 4.png">
+      <span class="discount-badge">20%<br>off</span>
+      <button class="wishlist-btn"><img src="heart icon.png"></button>
+    </div>
+    <div class="details">
+      <div class="header-row">
+        <span class="category">Grocery</span>
+        <div class="rating"><span class="star">★</span>4.5</div>
+      </div>
+      <div class="product-title">Ashirvaad Attaa</div>
+      <div class="weight">1kg</div>
+      <div class="footer-row">
+        <div class="price">$200</div>
+        <button class="add-btn">Add <img src="Icon (1).png"></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer-section">
+
+  <div class="footer-girl-box">
+    <img src="footer girl image.jpg">
+  </div>
+
+  <div class="footer-grid">
+
+    <div class="footer-left-area">
+      <img src="logo image.png">
+      <div class="socials">
+        <img src="facebook.png">
+        <img src="instagram.png">
+        <img src="whatsup.png">
+      </div>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li>About us</li>
+        <li>Blog</li>
+        <li>Contact us</li>
+        <li>Career</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Customer Service</h4>
+      <ul>
+        <li>My Account</li>
+        <li>Track your order</li>
+        <li>Return</li>
+        <li>FAQ</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Our Information</h4>
+      <ul>
+        <li>Privacy</li>
+        <li>User Terms</li>
+        <li>Return Policy</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact Info</h4>
+      <ul>
+        <li>📞 123-456-789</li>
+        <li>✉️ example@gmail.com</li>
+        <li>📍 Mumbai, India</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom-text">
+    © 2025 My Market. All Rights Reserved | Terms & Privacy
+  </div>
+
+</footer>
+<!-- Popup Box -->
+<div class="popup" id="popup">
+  <span class="close" onclick="closePopup()">✕</span>
+
+  <h3>Order Updates</h3>
+  <ul>
+    <li>“Your order has been placed successfully! We’ll notify you once it’s out for delivery.”</li>
+    <li>“Good news! Your groceries are on the way. Track your delivery in real time.”</li>
+    <li>“Your order has been delivered. Thank you for shopping with us!”</li>
+  </ul>
+</div>
+
+</body>
+<script>
+function goToCart(){
+  window.location.href = "add to cart.html";
+}
+// new 1
+const userIcon = document.getElementById("userIcon");
+const accountMenu = document.getElementById("accountMenu");
+
+userIcon.addEventListener("click", () => {
+  accountMenu.style.display =
+    accountMenu.style.display === "flex" ? "none" : "flex";
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".icons")) {
+    accountMenu.style.display = "none";
+  }
+});
+// bell
+function openPopup() {
+  document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+</script>
+</html>

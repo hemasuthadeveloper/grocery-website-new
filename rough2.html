@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Step Progress</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  padding: 50px;
+}
+
+/* MAIN BAR */
+.progress-container {
+  background: #4caf50;
+  border-radius: 12px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* EACH STEP */
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* CIRCLE */
+.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ACTIVE STATE */
+.step.active .circle {
+  background: white;
+}
+
+/* TEXT ACTIVE */
+.step.active span {
+  font-weight: bold;
+}
+
+/* LINE */
+.line {
+  flex: 1;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-container">
+
+  <div class="step active" onclick="setStep(1)">
+    <div class="circle"></div>
+    <span>Product card</span>
+  </div>
+
+  <div class="step" onclick="setStep(2)">
+    <div class="circle"></div>
+    <span>Check out page</span>
+  </div>
+
+  
+  <div class="step" onclick="setStep(3)">
+    <div class="circle"></div>
+    <span>Payment page</span>
+  </div>
+
+</div>
+
+<script>
+function setStep(step) {
+  const steps = document.querySelectorAll('.step');
+
+  steps.forEach((item, index) => {
+    if (index < step) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

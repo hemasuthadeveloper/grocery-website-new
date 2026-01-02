@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Details – The Market</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#fff7f7;
+}
+
+/* ================= HEADER ================= */
+header{
+    background:#4CAF50;
+    padding:14px 40px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    font-weight:bold;
+}
+
+.search-bar{
+    flex:1;
+    position:relative;
+}
+
+.search-bar input{
+    width:100%;
+    padding:10px 45px 10px 15px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+}
+
+.search-bar i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#4CAF50;
+}
+
+.header-icons i{
+    color:#fff;
+    margin-left:20px;
+}
+
+/* ================= NAV ================= */
+nav{
+    background:#fff;
+    padding:12px 0;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    font-size:14px;
+}
+
+/* ================= ORDER INFO BAR ================= */
+.order-info{
+    background:#4CAF50;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+}
+
+.order-info div{
+    text-align:center;
+    font-size:13px;
+}
+
+.order-info strong{
+    display:block;
+    margin-top:6px;
+    font-weight:normal;
+}
+
+.invoice-btn{
+    background:#fff;
+    color:#4CAF50;
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:13px;
+}
+
+/* ================= ORDER ITEMS ================= */
+.order-container{
+    padding:30px 60px;
+}
+
+.order-card{
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:6px;
+    padding:15px 20px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.product{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.product img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.product-name{
+    font-size:14px;
+}
+
+.date{
+    font-size:13px;
+}
+
+.price{
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ================= SUMMARY ================= */
+.summary{
+    margin-top:30px;
+}
+
+.summary-row{
+    background:#4CAF50;
+    color:#fff;
+    padding:14px 20px;
+    margin-bottom:15px;
+    border-radius:4px;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.summary-total{
+    display:flex;
+    justify-content:space-between;
+    padding:0 5px;
+    font-size:15px;
+    margin-top:10px;
+}
+
+.track-btn{
+    margin:30px auto 0;
+    display:block;
+    background:#4CAF50;
+    color:#fff;
+    border:none;
+    padding:12px 30px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background:#F5A623;
+    padding:40px 60px;
+    margin-top:40px;
+}
+
+.footer-wrap{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.footer-col h4{
+    margin-bottom:15px;
+}
+
+.footer-col p{
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.social i{
+    font-size:18px;
+    margin-right:10px;
+}
+
+.footer-bottom{
+    text-align:center;
+    font-size:12px;
+    margin-top:25px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        The Market
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search product category">
+        <i class="fa fa-search"></i>
+    </div>
+
+    <div class="header-icons">
+        <i class="fa fa-user"></i>
+        <i class="fa fa-heart"></i>
+        <i class="fa fa-cart-shopping"></i>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav>
+    <ul>
+        <li>Home</li>
+        <li>Shopping</li>
+        <li>Categories</li>
+        <li>Blogs</li>
+        <li>Contact us</li>
+        <li>About us</li>
+    </ul>
+</nav>
+
+<!-- ORDER INFO -->
+<div class="order-info">
+    <div>Order ID<strong>#SKID456FH</strong></div>
+    <div>Payment Method<strong>G-PAY</strong></div>
+    <div>Transaction Id<strong>TF59DHJK</strong></div>
+    <div>Estimate Delivery Date<strong>28 June 2025</strong></div>
+    <button class="invoice-btn">Download Invoice</button>
+</div>
+
+<!-- ORDER ITEMS -->
+<div class="order-container">
+
+    <div class="order-card">
+        <div class="product">
+            <img src="https://via.placeholder.com/70">
+            <div class="product-name">Aashirvaad Attaas</div>
+        </div>
+        <div class="date">22 August 2025</div>
+        <div class="price">$200</div>
+    </div>
+
+    <div class="order-card">
+        <div class="product">
+            <img src="https://via.placeholder.com/70">
+            <div class="product-name">Aashirvaad Attaas</div>
+        </div>
+        <div class="date">22 August 2025</div>
+        <div class="price">$14</div>
+    </div>
+
+    <div class="order-card">
+        <div class="product">
+            <img src="https://via.placeholder.com/70">
+            <div class="product-name">Aashirvaad Attaas</div>
+        </div>
+        <div class="date">22 August 2025</div>
+        <div class="price">$134</div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+        <div class="summary-row">
+            <span>Shipping</span>
+            <span>$0.00</span>
+        </div>
+        <div class="summary-row">
+            <span>Taxes</span>
+            <span>$0.00</span>
+        </div>
+        <div class="summary-row">
+            <span>Coupon Discount</span>
+            <span>$100</span>
+        </div>
+
+        <div class="summary-total">
+            <span>Total</span>
+            <strong>$248</strong>
+        </div>
+
+        <button class="track-btn">Track Order</button>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-wrap">
+
+        <div class="footer-col">
+            <h4>The Market</h4>
+            <p>Follow Us On :</p>
+            <div class="social">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blog</p>
+            <p>Contact us</p>
+            <p>Career</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Customer Service</h4>
+            <p>My Account</p>
+            <p>Track your order</p>
+            <p>Return</p>
+            <p>FAQ</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Info</h4>
+            <p>123-456-789</p>
+            <p>example@gmail.com</p>
+            <p>7, Mount Street</p>
+            <p>Mumbai-001</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 The Market. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
