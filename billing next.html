@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Billing Details next</title>
+
+<style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito Sans', sans-serif;
+    }
+
+    body {
+      background:#FFF9F9;
+    }
+a{
+  text-decoration: none;
+}
+    /* ================= HEADER ================= */
+   .figma-header{
+  padding:18px 50px;
+ background:#FFF9F9;
+}
+
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.figma-logo img{
+  height:92px;
+  
+}
+
+.figma-search{
+  width:700px;
+  background:#4CAF50;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  padding:10px 18px;
+}
+
+.figma-search input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  font-size:20px;
+}
+
+.figma-search input::placeholder{
+  color:#eaffea;
+}
+
+.search-icon{
+  width:40px;
+  height:40px;
+  padding:6px;
+  /* border-radius:50%; */
+}
+
+.figma-icons img{
+  width:22px;
+  margin-left:18px;
+  cursor:pointer;
+}
+
+.figma-menu{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:12px;
+}
+
+.figma-menu a{
+  text-decoration:none;
+  color:#000;
+  font-size:20px;
+}
+/* RIGHT */
+.icons{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icons img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit: cover;
+}
+
+.icons i{
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* ================= NAV STEPS ================= */
+ .progress-container {
+      background: #4caf50;
+      border-radius: 12px;
+      padding: 34px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    .step.active .circle {
+      background: white;
+    }
+
+   
+/* ================= CART LIST ================= */
+.cart-container {
+  width: 100%;
+  margin: 30px auto;
+}
+
+.cart-wrapper {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+/* Left Image + Name */
+.cart-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 35%;
+}
+
+.cart-left img {
+  width: 120px;
+  height: 120px;
+  border: 1px solid black;
+  object-fit: cover;
+  margin-left: -20px;
+}
+
+.cart-title {
+  font-weight: 600;
+  margin-left: 50px;
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+/* Date column */
+.cart-date {
+  width: 30%;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+/* Price column */
+.cart-price {
+  width: 15%;
+  text-align: right;
+  font-weight: 600;
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+}
+
+
+/* ================= ORDER SUMMARY ================= */
+.summary-section{
+  display:flex;
+  gap:40px;
+  margin-top:30px;
+}
+
+.summary-box{
+  width:332px;
+  border:1px solid black;
+  padding:30px;
+  background:#fff;
+  border-radius:8px;
+  height: 300px;
+  box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.summary-box h4{
+  margin-bottom:10px;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+  margin:6px 0;
+}
+
+.summary-total{
+  font-weight:bold;
+  margin-top:10px;
+}
+
+.payment-box {
+  margin-top: 20px;
+  width: 260px;
+}
+
+.payment-header {
+  display: flex;
+  /* justify-content: space-between; */
+  cursor: pointer;
+  /* font-weight: 600; */
+  padding: 10px 0;
+ margin-left: 50px;
+  gap:30px;
+  font-size: 19px;
+}
+
+.payment-methods {
+  display: none;
+  margin-top: 10px;
+}
+
+.pay-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.pay-item img {
+  width: 35px;
+  height: auto;
+}
+/* FOOTER */
+    .footer {
+  background: #f7a400;
+  position: relative;
+  padding: 60px 60px 40px 200px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+/* OVAL CONTAINER */
+.footer-girl-wrapper {
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  width: 90px;
+  height: 140px;
+  border-radius: 100px 100px 0 0; /* OVAL SHAPE */
+  overflow: hidden;
+  background: #f7a400;
+}
+
+/* IMAGE */
+.footer-girl-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+    background: #f7a400;
+    padding: 60px 50px 35px;
+    color: #000;
+    position: relative;
+    overflow: visible;   /* IMPORTANT */
+}
+
+
+/* MAIN GRID */
+.footer-main{
+    display:grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr 1.4fr;
+    gap:30px;
+    align-items:start;
+    margin-top: -41px;
+}
+
+/* GIRL IMAGE */
+.girl-img{
+    position:absolute;
+    bottom:0;
+    left:20px;
+    height:100px;
+    border-radius: 150%;
+}
+
+/* LEFT CONTENT */
+.footer-left{
+    padding-left:101px; /* space for girl image */
+}
+
+.footer-left img.logo{
+    width:90px;
+    margin-top: -14px;
+}
+
+.follow{
+    font-size:19px;
+    margin:8px 0 6px;
+    font-weight:600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;     /* soft square like Figma */
+  background: #fff;
+  padding: 6px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* HEADINGS */
+.footer h4{
+    font-size:22px;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+/* LISTS */
+.footer ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer ul li{
+    font-size:17px;
+    margin-bottom:6px;
+}
+
+/* CONTACT */
+.contact li{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+}
+
+/* BOTTOM */
+.footer-bottom{
+    text-align:center;
+    font-size:15px;
+    margin-top:10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);;
+    margin-left: 230px;
+
+}
+/* new */
+.account-dropdown {
+  position: absolute;
+  top: 115px;
+  right: 27;
+  width: 235px;
+  background: #4caf50;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.account-dropdown a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.account-dropdown a:hover {
+  background: rgba(255,255,255,0.2);
+}
+/* bell */
+/* Popup container */
+.popup {
+  position: fixed;
+  top: 120px;
+  left: 70%;
+  transform: translateX(-50%);
+  width: 700px;
+  background: #4caf50;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Close icon */
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Title */
+.popup h3 {
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* List style */
+.popup ul {
+  padding-left: 20px;
+}
+
+.popup li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+/* ==================== MEDIA QUERIES ==================== */
+
+/* =================== TABLETS (<= 1024px) =================== */
+@media (max-width: 1024px) {
+
+  /* Header */
+  .figma-header {
+    padding: 18px 30px;
+  }
+
+  .figma-search {
+    width: 500px;
+    padding: 8px 14px;
+  }
+
+  .figma-search input {
+    font-size: 18px;
+  }
+
+  .figma-menu {
+    gap: 25px;
+    font-size: 18px;
+  }
+
+  .cart-wrapper {
+    max-width: 95%;
+  }
+
+  .cart-left img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cart-title {
+    font-size: 16px;
+    margin-left: 20px;
+  }
+
+  .cart-date, .cart-price {
+    font-size: 14px;
+  }
+
+  .summary-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .summary-box,
+  .payment-box {
+    width: 100%;
+  }
+
+  .payment-header {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .popup {
+    width: 80%;
+  }
+}
+
+/* =================== MOBILE (<= 768px) =================== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .figma-search {
+    width: 100%;
+  }
+
+  .figma-menu {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Cart items */
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .cart-left {
+    width: 100%;
+  }
+
+  .cart-left img {
+    width: 90px;
+    height: 90px;
+    margin-left: 0;
+  }
+
+  .cart-title {
+    margin-left: 0;
+  }
+
+  .cart-date,
+  .cart-price {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Summary section */
+  .summary-section {
+    gap: 15px;
+  }
+
+  .summary-box h4,
+  .payment-header span {
+    font-size: 16px;
+  }
+
+  .pay-item img {
+    width: 30px;
+  }
+
+  .popup {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* =================== SMALL MOBILE (<= 480px) =================== */
+@media (max-width: 480px) {
+
+  .figma-search input {
+    font-size: 16px;
+  }
+
+  .figma-menu a {
+    font-size: 16px;
+  }
+
+  /* Progress steps */
+  .progress-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  /* Cart items */
+  .cart-left img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cart-title {
+    font-size: 14px;
+  }
+
+  .cart-date,
+  .cart-price {
+    font-size: 12px;
+  }
+
+  /* Summary and payment box */
+  .summary-box h4,
+  .payment-header span {
+    font-size: 14px;
+  }
+
+  .pay-item {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .footer-left {
+    padding-left: 15px;
+  }
+
+  .footer-girl-wrapper {
+    display: none; /* hide decorative girl on small mobile */
+  }
+
+  .footer-bottom {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  /* Popup */
+  .popup {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .payment-box {
+    width: 100%;
+  }
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="figma-header">
+  <div class="header-row">
+
+    <!-- Logo -->
+    <div class="figma-logo">
+      <img src="logo image.png" alt="The Market">
+    </div>
+
+    <!-- Search -->
+    <div class="figma-search">
+      <input type="text" placeholder="Search product category">
+      <img src="logo search icon.png" class="search-icon">
+    </div>
+
+ <!-- RIGHT ICONS -->
+        <div class="icons">
+          <img src="logo  boy image.jpg" id="userIcon">
+
+             <!-- DROPDOWN -->
+    <div class="account-dropdown" id="accountMenu">
+      <a href="#">My Accounts</a><hr>
+      <a href="personal.html">Personal Information</a>
+      <a href="invoice.html">My Order</a>
+      <a href="Tracking.html">Tracking Order</a>
+      <a href="password manager.html">Password Manager</a>
+      <a href="logout.html">Logout</a>
+    </div>
+           <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
+            <a href="add to cart.html">
+  <i class="fa-solid fa-cart-shopping"></i>
+</a>
+           <i class="fa-regular fa-bell bell" onclick="openPopup()"></i>
+        </div>
+
+  </div>
+
+
+  <!-- Menu -->
+  <nav class="figma-menu">
+    <a href="main.html">Home</a>
+    <a href="shopping.html">Shopping</a>
+    <a href="categories.html">Categories</a>
+    <a href="blog.html">Blogs</a>
+    <a href="contact.html">Contact us</a>
+    <a href="about us.html">About us</a>
+  </nav>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-container">
+  <div class="step active"><div class="circle"></div><span>Product card</span></div>
+  <div class="step"><div class="circle"></div><span>Check out page</span></div>
+  <div class="step"><div class="circle"></div><span>Payment page</span></div>
+</div>
+
+<!-- CART ITEMS -->
+<div class="cart-container">
+ <div class="cart-wrapper">
+ <div class="cart-item">
+  <div class="cart-left">
+    <img src="wheat image.png" alt="product">
+    <div class="cart-info">
+      <p class="cart-title">Aashirvaad Attaas</p>
+    </div>
+  </div>
+
+  <div class="cart-date">
+    22 August 2025
+  </div>
+
+  <div class="cart-price">
+    $200
+  </div>
+</div>
+
+ <div class="cart-item">
+  <div class="cart-left">
+    <img src="banana image.jpg" alt="product">
+    <div class="cart-info">
+      <p class="cart-title">Aashirvaad Attaas</p>
+    </div>
+  </div>
+
+  <div class="cart-date">
+    22 August 2025
+  </div>
+
+  <div class="cart-price">
+    $200
+  </div>
+</div>
+<!-- card 3 -->
+ <div class="cart-item">
+  <div class="cart-left">
+    <img src="pomegranate.jpg" alt="product">
+    <div class="cart-info">
+      <p class="cart-title">Aashirvaad Attaas</p>
+    </div>
+  </div>
+
+  <div class="cart-date">
+    22 August 2025
+  </div>
+
+  <div class="cart-price">
+    $200
+  </div>
+</div>
+
+  <!-- SUMMARY -->
+  <div class="summary-section">
+    <div class="summary-box">
+      <h4>Order Summary</h4><hr>
+      <div class="summary-row"><span>Items</span><span>3</span></div>
+      <div class="summary-row"><span>Subtotal</span><span>$348</span></div>
+      <div class="summary-row"><span>Shipping</span><span>$0.00</span></div>
+      <div class="summary-row"><span>Taxes</span><span>$0.00</span></div>
+      <div class="summary-row"><span>Coupon Discount</span><span>$100</span></div>
+      <hr>
+      <div class="summary-row summary-total">
+        <span>Total</span>
+        <span>$248</span>
+      </div>
+    </div>
+
+   <div class="payment-box">
+  <div class="payment-header" onclick="togglePayment()">
+    <span>Choose payment</span>
+    <span id="arrow"> ▼</span>
+  </div>
+
+  <div class="payment-methods" id="paymentMethods">
+    <div class="pay-item">
+     <a href="payment.html" class="payment-option">
+  <img src="gpay image.webp" alt="Google Pay">
+  <span>Google Pay</span>
+</a>
+    </div>
+
+    <div class="pay-item">
+      <img src="phone pay.webp">
+      <span>PhonePe</span>
+    </div>
+
+    <div class="pay-item">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg">
+      <span>PayPal</span>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<footer class="footer">
+
+    <!-- Girl Image at Bottom -->
+   <div class="footer-girl-wrapper">
+  <img src="footer girl image.jpg" class="footer-girl-img">
+</div>
+
+    <div class="footer-main">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+            <img src="logo image.png" class="logo">
+
+            <div class="follow">Follow Us On :</div>
+           <div class="social-icons">
+  <a href="#"><img src="facebook.png" alt="Facebook"></a>
+  <a href="#"><img src="instagram.png" alt="Instagram"></a>
+  <a href="#"><img src="whatsup.png" alt="WhatsApp"></a>
+</div>
+
+        </div>
+
+        <!-- COMPANY -->
+        <div>
+            <h4>Company</h4>
+            <ul>
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Contact us</li>
+                <li>Career</li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER SERVICE -->
+        <div>
+            <h4>Customer service</h4>
+            <ul>
+                <li>My Account</li>
+                <li>Track your order</li>
+                <li>Return</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+
+        <!-- OUR INFORMATION -->
+        <div>
+            <h4>Our information</h4>
+            <ul>
+                <li>Privacy</li>
+                <li>User terms & Conditions</li>
+                <li>Return Policy</li>
+            </ul>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div>
+            <h4>Contact info</h4>
+            <ul class="contact">
+                <li><i class="fa-solid fa-phone"></i> 123-456-789</li>
+                <li><i class="fa-solid fa-envelope"></i> example@gmail.com</li>
+                <li><i class="fa-solid fa-location-dot"></i> 72, main street<br>Mumbai-001</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 My Market. All Rights Reserved<br>
+        Terms & Conditions | Privacy Policy
+    </div>
+
+</footer>
+<!-- Popup Box -->
+<div class="popup" id="popup">
+  <span class="close" onclick="closePopup()">✕</span>
+
+  <h3>Order Updates</h3>
+  <ul>
+    <li>“Your order has been placed successfully! We’ll notify you once it’s out for delivery.”</li>
+    <li>“Good news! Your groceries are on the way. Track your delivery in real time.”</li>
+    <li>“Your order has been delivered. Thank you for shopping with us!”</li>
+  </ul>
+</div>
+
+
+
+</body>
+<script>
+    
+function togglePayment() {
+  const methods = document.getElementById("paymentMethods");
+  const arrow = document.getElementById("arrow");
+
+  if (methods.style.display === "block") {
+    methods.style.display = "none";
+    arrow.innerHTML = "⌄";
+  } else {
+    methods.style.display = "block";
+    arrow.innerHTML = "⌃";
+  }
+}
+// new 1
+const userIcon = document.getElementById("userIcon");
+const accountMenu = document.getElementById("accountMenu");
+
+userIcon.addEventListener("click", () => {
+  accountMenu.style.display =
+    accountMenu.style.display === "flex" ? "none" : "flex";
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".icons")) {
+    accountMenu.style.display = "none";
+  }
+});
+// bell
+function openPopup() {
+  document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+
+</script>
+</html>
